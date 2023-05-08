@@ -1,0 +1,88 @@
+package kurtosis_print
+
+import (
+	"context"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/service_network"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/kurtosis_instruction/shared_helpers/magic_string_helper"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/kurtosis_starlark_framework"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/kurtosis_starlark_framework/builtin_argument"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/kurtosis_starlark_framework/kurtosis_plan_instruction"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/runtime_value_store"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/startosis_errors"
+	"github.com/avenbreaks/xarchon/core/server/api_container/server/startosis_engine/startosis_validator"
+	"github.com/kurtosis-tech/stacktrace"
+	"go.starlark.net/starlark"
+)
+
+const (
+	PrintBuiltinName = "print"
+
+	PrintArgName = "msg"
+)
+
+func NewPrint(serviceNetwork service_network.ServiceNetwork, runtimeValueStore *runtime_value_store.RuntimeValueStore) *kurtosis_plan_instruction.KurtosisPlanInstruction {
+	return &kurtosis_plan_instruction.KurtosisPlanInstruction{
+		KurtosisBaseBuiltin: &kurtosis_starlark_framework.KurtosisBaseBuiltin{
+			Name: PrintBuiltinName,
+
+			Arguments: []*builtin_argument.BuiltinArgument{
+				{
+					Name:              PrintArgName,
+					IsOptional:        false,
+					ZeroValueProvider: builtin_argument.ZeroValueProvider[starlark.Value],
+					Validator:         nil,
+				},
+			},
+		},
+
+		Capabilities: func() kurtosis_plan_instruction.KurtosisPlanInstructionCapabilities {
+			return &PrintCapabilities{
+				serviceNetwork:    serviceNetwork,
+				runtimeValueStore: runtimeValueStore,
+
+				msg: nil, // populated at interpretation time
+			}
+		},
+
+		DefaultDisplayArguments: map[string]bool{
+			PrintArgName: true,
+		},
+	}
+}
+
+type PrintCapabilities struct {
+	serviceNetwork    service_network.ServiceNetwork
+	runtimeValueStore *runtime_value_store.RuntimeValueStore
+
+	msg starlark.Value
+}
+
+func (builtin *PrintCapabilities) Interpret(arguments *builtin_argument.ArgumentValuesSet) (starlark.Value, *startosis_errors.InterpretationError) {
+	msg, err := builtin_argument.ExtractArgumentValue[starlark.Value](arguments, PrintArgName)
+	if err != nil {
+		return nil, startosis_errors.WrapWithInterpretationError(err, "Unable to extract value for '%s' argument", PrintArgName)
+	}
+	builtin.msg = msg
+	return starlark.None, nil
+}
+
+func (builtin *PrintCapabilities) Validate(_ *builtin_argument.ArgumentValuesSet, _ *startosis_validator.ValidatorEnvironment) *startosis_errors.ValidationError {
+	// nothing to do for now
+	// TODO(gb): maybe in the future validate that if we're using a magic string, it points to something real
+	return nil
+}
+
+func (builtin *PrintCapabilities) Execute(_ context.Context, _ *builtin_argument.ArgumentValuesSet) (string, error) {
+	var serializedMsg string
+	switch arg := builtin.msg.(type) {
+	case starlark.String:
+		serializedMsg = arg.GoString()
+	default:
+		serializedMsg = arg.String()
+	}
+	maybeSerializedArgsWithRuntimeValue, err := magic_string_helper.ReplaceRuntimeValueInString(serializedMsg, builtin.runtimeValueStore)
+	if err != nil {
+		return "", stacktrace.Propagate(err, "Error replacing runtime value '%v'", serializedMsg)
+	}
+	return maybeSerializedArgsWithRuntimeValue, nil
+}

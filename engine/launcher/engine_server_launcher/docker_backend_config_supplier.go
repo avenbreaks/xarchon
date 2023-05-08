@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2022 - present Kurtosis Technologies Inc.
+ * All Rights Reserved.
+ */
+
+package engine_server_launcher
+
+import (
+	"github.com/avenbreaks/xarchon/engine/launcher/args"
+	"github.com/avenbreaks/xarchon/engine/launcher/args/kurtosis_backend_config"
+)
+
+type DockerBackendConfigSupplier struct {
+}
+
+func NewDockerKurtosisBackendConfigSupplier() DockerBackendConfigSupplier {
+	return DockerBackendConfigSupplier{}
+}
+
+func (backendConfigSupplier DockerBackendConfigSupplier) getKurtosisBackendConfig() (args.KurtosisBackendType, interface{}) {
+	dockerBackendConfig := kurtosis_backend_config.DockerBackendConfig{}
+	return args.KurtosisBackendType_Docker, dockerBackendConfig
+}

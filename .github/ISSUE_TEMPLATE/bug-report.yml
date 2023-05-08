@@ -1,0 +1,52 @@
+name: "Bug Report"
+description: Report broken functionality
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to make Kurtosis better. We thrive on feedback, so you can open this page with `kurtosis feedback --bug`.
+  - type: input
+    id: version
+    attributes:
+      label: What's your CLI version?
+      placeholder: e.g. 1.2.0
+      description: |
+        View the version of your Kurtosis CLI with `kurtosis version`. This will get autofilled if you use `kurtosis feedback --bug`.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description & steps to reproduce
+      description: |
+        We can support you better if you provide logs, screenshots, reproduction steps, [`kurtosis enclave dump`](https://docs.kurtosis.com/enclave-dump) output, [`kurtosis dump`](https://docs.kurtosis.com/dump) output, etc.
+      placeholder: |
+        When I do X, Y happens...
+
+        Attached is the `kurtosis dump` output...
+
+        To reproduce,
+        1. Run command '...'
+        2. Then do...
+    validations:
+      required: true
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired behavior
+      placeholder: |
+         What should happen?
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: What is the severity of this bug?
+      multiple: false
+      options:
+      - Critical; I am blocked and Kurtosis is unusable for me because of this bug.
+      - Painful; this is causing significant friction in my workflow.
+      - Papercut; this bug is frustrating, but I have a workaround.
+    validations:
+      required: true

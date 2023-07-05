@@ -6,11 +6,11 @@ replace (
 	github.com/avenbreaks/xarchon/api/golang => ../../api/golang
 	github.com/avenbreaks/xarchon/container-engine-lib => ../../container-engine-lib
 	github.com/avenbreaks/xarchon/contexts-config-store => ../../contexts-config-store
-	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/core/launcher => ../../core/launcher
 	github.com/avenbreaks/xarchon/engine/launcher => ../launcher
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
+	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
@@ -23,7 +23,7 @@ require (
 	github.com/kurtosis-tech/stacktrace v0.0.0-20211028211901-1c67a77b5409
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.8.1
-	google.golang.org/grpc v1.41.0
+	google.golang.org/grpc v1.53.0
 	google.golang.org/protobuf v1.29.1
 )
 
@@ -47,7 +47,7 @@ require (
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/text v0.7.0 // indirect
-	google.golang.org/genproto v0.0.0-20210402141018-6c239bbf2bb1 // indirect
+	google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 

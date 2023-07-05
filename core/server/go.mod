@@ -8,24 +8,24 @@ replace (
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander => ../files_artifacts_expander
 	github.com/avenbreaks/xarchon/core/launcher => ../launcher
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/avenbreaks/xarchon/api/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/container-engine-lib v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/launcher v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/name_generator v0.0.0 // Local dependency
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/kurtosis-tech/minimal-grpc-server/golang v0.0.0-20211201000847-a204edc5a0b3
 	github.com/kurtosis-tech/stacktrace v0.0.0-20211028211901-1c67a77b5409
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.8.1
-	google.golang.org/grpc v1.41.0
-	google.golang.org/protobuf v1.27.1
+	google.golang.org/grpc v1.53.0
+	google.golang.org/protobuf v1.28.1
 	gotest.tools v2.2.0+incompatible
 )
 
@@ -60,7 +60,7 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/go-cmp v0.5.8 // indirect
+	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/itchyny/timefmt-go v0.1.4 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
@@ -80,7 +80,7 @@ require (
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/text v0.7.0 // indirect
-	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
+	google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

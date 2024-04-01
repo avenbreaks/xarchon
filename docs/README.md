@@ -1,10 +1,4 @@
-Kurtosis Docs
-=============
-
->📖 Kurtosis documentation site codebase.
->
->👉 Read at [docs.kurtosis.com][kurtosis-docs]
-
+# Xarchon Docs
 ---
 
 ### Philosophy

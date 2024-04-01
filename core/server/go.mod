@@ -8,18 +8,18 @@ replace (
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander => ../files_artifacts_expander
 	github.com/avenbreaks/xarchon/core/launcher => ../launcher
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/avenbreaks/xarchon/api/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/container-engine-lib v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/launcher v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/name_generator v0.0.0 // Local dependency
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/kurtosis-tech/minimal-grpc-server/golang v0.0.0-20211201000847-a204edc5a0b3
 	github.com/kurtosis-tech/stacktrace v0.0.0-20211028211901-1c67a77b5409
 	github.com/sirupsen/logrus v1.8.1
@@ -48,7 +48,7 @@ require (
 	github.com/acomagu/bufpipe v1.0.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/distribution v2.8.0+incompatible // indirect
-	github.com/docker/docker v20.10.24+incompatible // indirect
+	github.com/docker/docker v24.0.9+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/dsnet/compress v0.0.1 // indirect

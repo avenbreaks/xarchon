@@ -6,11 +6,11 @@ replace (
 	github.com/avenbreaks/xarchon/api/golang => ../../api/golang
 	github.com/avenbreaks/xarchon/container-engine-lib => ../../container-engine-lib
 	github.com/avenbreaks/xarchon/contexts-config-store => ../../contexts-config-store
-	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/core/launcher => ../../core/launcher
 	github.com/avenbreaks/xarchon/engine/launcher => ../launcher
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
+	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
@@ -30,7 +30,7 @@ require (
 require (
 	github.com/Microsoft/go-winio v0.4.17 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/docker/distribution v2.8.0+incompatible // indirect
+	github.com/docker/distribution v2.8.2+incompatible // indirect
 	github.com/docker/docker v20.10.24+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect

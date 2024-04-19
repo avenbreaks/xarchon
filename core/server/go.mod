@@ -8,18 +8,18 @@ replace (
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander => ../files_artifacts_expander
 	github.com/avenbreaks/xarchon/core/launcher => ../launcher
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/avenbreaks/xarchon/api/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/container-engine-lib v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/files_artifacts_expander v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/core/launcher v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/grpc-file-transfer/golang v0.0.0 // Local dependency
 	github.com/avenbreaks/xarchon/name_generator v0.0.0 // Local dependency
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/kurtosis-tech/minimal-grpc-server/golang v0.0.0-20211201000847-a204edc5a0b3
 	github.com/kurtosis-tech/stacktrace v0.0.0-20211028211901-1c67a77b5409
 	github.com/sirupsen/logrus v1.8.1
@@ -76,10 +76,10 @@ require (
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/xanzy/ssh-agent v0.3.0 // indirect
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
-	golang.org/x/crypto v0.1.0 // indirect
-	golang.org/x/net v0.7.0 // indirect
-	golang.org/x/sys v0.5.0 // indirect
-	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/crypto v0.21.0 // indirect
+	golang.org/x/net v0.23.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

@@ -6,11 +6,11 @@ replace (
 	github.com/avenbreaks/xarchon/api/golang => ../../api/golang
 	github.com/avenbreaks/xarchon/container-engine-lib => ../../container-engine-lib
 	github.com/avenbreaks/xarchon/contexts-config-store => ../../contexts-config-store
-	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/core/launcher => ../../core/launcher
 	github.com/avenbreaks/xarchon/engine/launcher => ../launcher
-	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
+	github.com/avenbreaks/xarchon/grpc-file-transfer/golang => ../../grpc-file-transfer/golang
 	github.com/avenbreaks/xarchon/name_generator => ../../name_generator
+	github.com/avenbreaks/xarchon/xarchon_version => ../../xarchon_version
 )
 
 require (
@@ -44,9 +44,9 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.etcd.io/bbolt v1.3.6 // indirect
-	golang.org/x/net v0.7.0 // indirect
-	golang.org/x/sys v0.5.0 // indirect
-	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/net v0.23.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto v0.0.0-20210402141018-6c239bbf2bb1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
